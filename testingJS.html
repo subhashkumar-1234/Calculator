@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		function storeData(v) {
+			var txtInput=document.getElementById('textInput');
+			var oldvalue=txtInput.value;
+			txtInput.value=oldvalue+v;
+			var t=oldvalue.length;
+			var lastChar=oldvalue(t-1);
+			
+
+			
+			
+			var operatorSymbole=["+","-","/","*","%","."];
+			if(operatorSymbole.includes(v)){
+				if (operatorSymbole.includes(lastChar)) {
+					var removeLast=oldvalue.slice(0,-1);
+					txtInput.value.removeLast+v;
+				}
+				else{
+					txtInput.value=oldvalue+v;	
+				}
+			}
+			else{
+				txtInput.value=oldvalue+v;	
+			}
+		}
+		function calculate() {
+			var txtInput=document.getElementById('textInput');
+			var oldvalue=eval(txtInput.value);
+			txtInput.value=oldvalue;
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="textInput">
+	<br><br>
+	<button onclick="storeData('1')">1</button>
+	<button onclick="storeData('2')">2</button>
+	<button onclick="storeData('3')">3</button>
+	<br>
+	<button onclick="storeData('4')">4</button>
+	<button onclick="storeData('5')">5</button>
+	<button onclick="storeData('6')">6</button>
+	<br>
+	<button onclick="storeData('0')">0</button>
+	<button onclick="storeData('00')">00</button>
+	<button onclick="storeData('.')">.</button>
+	<br>
+	<button onclick="storeData('+')">+</button>
+	<button onclick="storeData('-')">-</button>
+	<button onclick="storeData('/')">/</button>
+	<br>
+	<button onclick="storeData('*')">*</button>
+	<button onclick="storeData('%')">%</button>
+	<button onclick="calculate()">=</button>
+
+</body>
+</body>
+</body>
+</html>
